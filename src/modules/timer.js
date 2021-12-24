@@ -23,7 +23,7 @@ const timer = (dadline) => {
         }
     }
     const zeroPlus = (number) => {
-        return  number < 10 ? '0' + number : number;
+        return number < 10 ? '0' + number : number;
     }
     const updateClock = () => {
         let gettime = getTimeRemaining();
@@ -31,7 +31,6 @@ const timer = (dadline) => {
             timerHours.textContent = zeroPlus(gettime.hours);
             timerMinutes.textContent = zeroPlus(gettime.minutes);
             timerSeconds.textContent = zeroPlus(gettime.seconds);
-            console.log(gettime.timeRemaining);
         }
         else {
             clearInterval(jTime);
