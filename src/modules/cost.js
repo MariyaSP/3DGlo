@@ -1,36 +1,37 @@
 const cost = () => {
 
-    const inputCalc = document.querySelectorAll('.calc-item');
-    const inputForm = document.querySelectorAll('form');
+    const inputText = document.querySelectorAll('input[name=user_name]');
+    const inputEmail = document.querySelectorAll('input[name=user_email]');
+    const inputTel = document.querySelectorAll('input[name=user_phone]');
+    const inputMes = document.querySelectorAll('input[placeholder="Ваше сообщение"]');
+    
 
-    inputCalc.forEach(inp => {
-        if (!inp.classList.contains('calc-type')) {
-            inp.addEventListener('input', (e) => {
-                e.target.value = e.target.value.replace(/[^\d]/g, '');
-            })
+    const validateFunc = function (typeVal, e) {
+        
+        switch(typeVal){
+            case 'text': e.target.value = e.target.value.replace(/[^а-яА-Я -]/g, ''); break;
+            case 'email':  e.target.value = e.target.value.replace(/[^a-zA-Z0-9\@\-\_\.\!\~\*\']/g, ''); break;
+            case 'tel':  e.target.value = e.target.value.replace(/[^0-9\-\)\(]/, ''); break;
+
         }
+    }
+
+    inputText.forEach(inp => {
+        inp.addEventListener('input', (e) => {validateFunc('text',e )});
     });
 
-    inputForm.forEach(form => {
+    inputEmail.forEach(inp => {
+        inp.addEventListener('input', (e) => {validateFunc('email', e)});
+    });
 
-        form.querySelector('input[type=text]').addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^а-яА-Я -]/g, '');
-        });
-        form.querySelector('input[type=tel]').addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^0-9\-\)\(]/, '');
-        });
-        form.querySelector('input[type=email]').addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/([^A-Za-z0-9_!~\'\-\.])+\@/g, '');
-        });
+    inputTel.forEach(inp => {
+        inp.addEventListener('input', (e) => {validateFunc('tel', e)});
+    });
 
-        if(form.querySelector('input[placeholder="Ваше сообщение"]'))
-        {
-            form.querySelector('input[placeholder="Ваше сообщение"]').addEventListener('input', (e) => {
-                e.target.value = e.target.value.replace(/[^а-яА-Я -]/g, '');
-            });
-        }
+    inputMes.forEach(inp => {
+        inp.addEventListener('input', (e) => {validateFunc('text', e)});
+    });
 
-    })
 
 };
 
