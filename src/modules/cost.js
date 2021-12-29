@@ -6,7 +6,7 @@ const cost = () => {
     const inputMes = document.querySelectorAll('input[placeholder="Ваше сообщение"]');
     
 
-    const validateFunc = function (typeVal, e) {
+    const validateFunc = (typeVal, e) => {
         
         switch(typeVal){
             case 'text': e.target.value = e.target.value.replace(/[^а-яА-Я -]/g, ''); break;
