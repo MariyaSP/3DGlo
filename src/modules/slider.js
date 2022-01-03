@@ -13,7 +13,8 @@ const slider = (sliderBlockClass, slidesClass, portfolioDotsClass, dotActiveClas
     if (!sliderBlock || !slides) {
         return;
     } 
-
+    
+    const portfolioDots = sliderBlock.querySelector(portfolioDotsClass);
     for (let i = 0; i < slides.length; i++) {
         dot = document.createElement('li');
         dot.classList.add('dot');
@@ -22,7 +23,7 @@ const slider = (sliderBlockClass, slidesClass, portfolioDotsClass, dotActiveClas
         }
         portfolioDots.append(dot);
     }
-    const portfolioDots = sliderBlock.querySelector(portfolioDotsClass);
+    
     const dots = document.querySelectorAll('.dot');
 
     const prevSlide = (elems, index, strClass) => {
