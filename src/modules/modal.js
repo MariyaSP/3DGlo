@@ -1,3 +1,4 @@
+import { animate } from './helpers'
 const modal = () => {
 
     const modals = document.querySelector('.popup');
@@ -12,12 +13,19 @@ const modal = () => {
             modals.style.transition = `0.5s`;
             modals.style.opacity = 0;
             modals.style.display = 'block';
-            console.log(sizeW);
-
+            
             if (sizeW > 768) {
 
                 setTimeout(() => {
-                    modals.style.opacity = 1;
+                    animate({
+                        duration: 100,
+                        timing(timeFraction) {
+                            return timeFraction;
+                        },
+                        draw(progress) {
+                            modals.style.opacity = progress;
+                        }
+                    });
                 }, 500);
             }
             else {
