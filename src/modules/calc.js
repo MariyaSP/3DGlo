@@ -7,7 +7,7 @@ const calc = (price = 100) => {
     const calcCount = document.querySelector('.calc-count');
     const calcDay = document.querySelector('.calc-day');
     const total = document.getElementById('total');
-    total.style.left = "0%"
+    
     const countCalc = () => {
         const calcTypeValue = +calcType.options[calcType.selectedIndex].value
         const calcSquareValue = calcSquare.value;
@@ -39,7 +39,7 @@ const calc = (price = 100) => {
                     return Math.pow(timeFraction, 5)
                 },
                 draw(progress) {
-                    total.style.width = progress * 60 + '%';
+                    
                     total.textContent = Math.round(progress * totalValue);
 
                 }
