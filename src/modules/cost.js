@@ -11,7 +11,7 @@ const cost = () => {
         switch(typeVal){
             case 'text': e.target.value = e.target.value.replace(/[^а-яА-Я -]/g, ''); break;
             case 'email':  e.target.value = e.target.value.replace(/[^a-zA-Z0-9\@\-\_\.\!\~\*\']/g, ''); break;
-            case 'tel':  e.target.value = e.target.value.replace(/[^0-9\-\)\(]/, ''); break;
+            case 'tel':  e.target.value = e.target.value.replace(/[^0-9\-\)\(\+]/, ''); break;
 
         }
     }
