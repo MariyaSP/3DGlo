@@ -37,9 +37,6 @@ const sendForm = ({ formId, someElem = [] }) => {
 
                 case 'user_name':
                     reg = /^[а-яА-Я]+(([ ][а-яА-Я ])?[а-яА-Я]*)*$/;
-
-                    console.log(str.length + " hkjhkjh");
-
                     if (!reg.test(inp.value) || str.length < 2) {
                         success = false;
                         label += ' имя слишком короткое';
@@ -49,7 +46,7 @@ const sendForm = ({ formId, someElem = [] }) => {
 
             }
         })
-        console.log(success + '   итог');
+        
         return success
     }
 
@@ -85,9 +82,7 @@ const sendForm = ({ formId, someElem = [] }) => {
                 formBody[elem.id] = element.value;
             }
         });
-
-        //console.log('результат' + validate(formElemrnts));
-
+        
         if (validate(formElemrnts)) {
 
             sendData(formBody)
