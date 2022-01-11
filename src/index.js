@@ -16,16 +16,16 @@ tabs();
 calc(100);
 slider('.portfolio-content', '.portfolio-item', '.portfolio-dots');
 
-const forms = ['form1', 'form2', 'form3']
-forms.forEach((form) => {
+// const forms = ['form1', 'form2', 'form3']
+// forms.forEach((form) => {
 
-    sendForm({
-        formId: form,
-        someElem: [
-            {
-                type: 'block',
-                id: 'total'
-            }
-        ]
-    });
-})
+//     sendForm({
+//         formId: form,
+//         someElem: [
+//             {
+//                 type: 'block',
+//                 id: 'total'
+//             }
+//         ]
+//     });
+// })
