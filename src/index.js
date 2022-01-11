@@ -8,14 +8,20 @@ import calc from "./modules/calc";
 import sendForm from "./modules/sendForm";
 
 
+<<<<<<< HEAD
 timer('25 december 2021');
 menu();npx
+=======
+timer('16 january 2022');
+menu();
+>>>>>>> finish
 modal();
 cost();
 tabs();
 calc(100);
 slider('.portfolio-content', '.portfolio-item', '.portfolio-dots');
 
+<<<<<<< HEAD
 // const forms = ['form1', 'form2', 'form3']
 // forms.forEach((form) => {
 
@@ -29,3 +35,18 @@ slider('.portfolio-content', '.portfolio-item', '.portfolio-dots');
 //         ]
 //     });
 // })
+=======
+const forms = ['form1', 'form2', 'form3']
+forms.forEach((form) => {
+
+    sendForm({
+        formId: form,
+        someElem: [
+            {
+                type: 'block',
+                id: 'total'
+            }
+        ]
+    });
+})
+>>>>>>> finish
