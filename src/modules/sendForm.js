@@ -30,9 +30,9 @@ const sendForm = ({ formId, someElem = [] }) => {
                 case 'user_phone':
                     reg = /[\d()-]/g;               //формат телефона 8 (999) 123-45-64
                     // console.log(reg.test(inp.value) + ' тел');
-                    if (!reg.test(inp.value) || (inp.value).trim() < 11) {
+                    if (!reg.test(inp.value) || str.length < 11) {
                         success = false;
-                        label += ' / формат телефона 8 (999) 123-45-64 /';
+                        label += ' / слишком короткий номер /';
                     }
 
                     break;
