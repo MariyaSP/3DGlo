@@ -1,5 +1,7 @@
 const sendForm = ({ formId, someElem = [] }) => {
     const form = document.getElementById(formId);
+    form.querySelector('input[type="email"]').required = true;
+
     const statusBlock = document.createElement('div');
     let label = '';
     let str = '';
@@ -91,6 +93,10 @@ const sendForm = ({ formId, someElem = [] }) => {
                     formElemrnts.forEach(input => {
                         input.value = '';
                     });
+
+                    setTimeout(() =>{
+                        statusBlock.textContent = '';
+                    }, 5000);
                 })
                 .catch(error => {
                     statusBlock.textContent = errorText;

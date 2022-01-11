@@ -8,13 +8,13 @@ import calc from "./modules/calc";
 import sendForm from "./modules/sendForm";
 
 
-timer('14 january 2022');
+timer('16 january 2022');
 menu();
 modal();
 cost();
 tabs();
 calc(100);
-slider('.portfolio-content','.portfolio-item', '.portfolio-dots');
+slider('.portfolio-content', '.portfolio-item', '.portfolio-dots');
 
 const forms = ['form1', 'form2', 'form3']
 forms.forEach((form) => {
